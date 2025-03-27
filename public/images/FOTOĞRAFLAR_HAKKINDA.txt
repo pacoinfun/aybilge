@@ -1,0 +1,26 @@
+Aybilge Daily Fotoğraf Yerleştirme Kılavuzu
+
+Sayfada kullanmak istediğiniz fotoğrafları bu klasöre aşağıdaki isimlerle yerleştirin:
+
+- aybilge1.jpg
+- aybilge2.jpg
+- aybilge3.jpg
+- aybilge4.jpg
+- aybilge5.jpg
+- aybilge6.jpg
+- aybilge7.jpg
+- aybilge8.jpg
+- aybilge9.jpg
+- aybilge10.jpg
+- aybilge11.jpg
+- aybilge12.jpg
+- aybilge13.jpg
+- aybilge14.jpg
+
+Not: 
+- Fotoğrafların ideal boyutu: 800x800 piksel veya 4:3 oranında
+- JPEG veya WebP formatında fotoğraflar kullanabilirsiniz
+- Dosya boyutlarının küçük olması için optimize etmeniz önerilir
+
+Tüm fotoğrafları yerleştirdikten sonra, sayfayı tarayıcıda görüntüleyebilirsiniz.
+Her sayfa yenilediğinizde, farklı bir "Bugünün Aybilge Gerçeği" görüntülenecektir. 
