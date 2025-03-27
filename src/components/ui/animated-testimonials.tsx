@@ -3,9 +3,8 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { cn } from "@/lib/utils";
-import confetti from "canvas-confetti";
 import type { ConfettiRef } from "@/components/ui/confetti";
 import { Confetti } from "@/components/ui/confetti";
 
@@ -39,15 +38,15 @@ export const AnimatedTestimonials = ({
     // Her öğe için rastgele rotasyon değerleri oluştur
     const newRotations = testimonials.map(() => Math.floor(Math.random() * 21) - 10);
     setRotations(newRotations);
-  }, [testimonials.length]);
+  }, [testimonials]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length);
-  };
+  }, [testimonials]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  }, [testimonials]);
 
   const isActive = (index: number) => {
     return index === active;
@@ -58,7 +57,7 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   // Fotoğraf değiştiğinde confetti efekti
   useEffect(() => {

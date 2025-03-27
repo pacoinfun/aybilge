@@ -15,7 +15,7 @@ import type {
 } from "canvas-confetti"
 import confetti from "canvas-confetti"
 
-import { Button, ButtonProps } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 type Api = {
   fire: (options?: ConfettiOptions) => void
@@ -93,10 +93,16 @@ const Confetti = forwardRef<ConfettiRef, Props>((props, ref) => {
   )
 })
 
-interface ConfettiButtonProps extends ButtonProps {
+interface ConfettiButtonProps {
   options?: ConfettiOptions &
     ConfettiGlobalOptions & { canvas?: HTMLCanvasElement }
   children?: React.ReactNode
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  className?: string
+  disabled?: boolean
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
+  size?: "default" | "sm" | "lg" | "icon"
+  asChild?: boolean
 }
 
 function ConfettiButton({ options, children, ...props }: ConfettiButtonProps) {

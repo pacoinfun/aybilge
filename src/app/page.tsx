@@ -136,11 +136,6 @@ export default function Home() {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const confettiRef = useRef<ConfettiRef>(null);
   
-  // Sayfa her yenilendiğinde rastgele bir gerçek seçmek için
-  useEffect(() => {
-    setRandomIndex(Math.floor(Math.random() * aybilgeFacts.length));
-  }, []);
-  
   // İlk yüklenmede confetti efekti için
   useEffect(() => {
     if (isFirstRender) {
@@ -258,6 +253,11 @@ export default function Home() {
       src: "/images/aybilge1.jpg",
     },
   ];
+
+  // Sayfa her yenilendiğinde rastgele bir gerçek seçmek için
+  useEffect(() => {
+    setRandomIndex(Math.floor(Math.random() * aybilgeFacts.length));
+  }, [aybilgeFacts.length]);
 
   // Bugünün rastgele Aybilge gerçeği için
   const todaysFact = aybilgeFacts[randomIndex];
